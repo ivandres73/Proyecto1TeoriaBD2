@@ -30,15 +30,20 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabCode = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.cboTablas = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.sqlIndex = new System.Windows.Forms.RichTextBox();
+            this.cboColumnas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtcolumna = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cboTablas = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabCode = new System.Windows.Forms.TabPage();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.sqlIndex = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkComplejo = new System.Windows.Forms.CheckBox();
+            this.cboColumnas2 = new System.Windows.Forms.ComboBox();
+            this.lblColumna2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabCode.SuspendLayout();
@@ -56,7 +61,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.txtcolumna);
+            this.tabPage1.Controls.Add(this.cboColumnas2);
+            this.tabPage1.Controls.Add(this.lblColumna2);
+            this.tabPage1.Controls.Add(this.checkComplejo);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.cboColumnas);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.cboTablas);
@@ -70,51 +79,25 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Visual";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // tabCode
+            // cboColumnas
             // 
-            this.tabCode.Controls.Add(this.sqlIndex);
-            this.tabCode.Location = new System.Drawing.Point(4, 25);
-            this.tabCode.Name = "tabCode";
-            this.tabCode.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCode.Size = new System.Drawing.Size(563, 366);
-            this.tabCode.TabIndex = 1;
-            this.tabCode.Text = "Code";
-            this.tabCode.UseVisualStyleBackColor = true;
+            this.cboColumnas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColumnas.FormattingEnabled = true;
+            this.cboColumnas.Location = new System.Drawing.Point(136, 146);
+            this.cboColumnas.Name = "cboColumnas";
+            this.cboColumnas.Size = new System.Drawing.Size(184, 24);
+            this.cboColumnas.TabIndex = 6;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre Index:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tabla:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(136, 28);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(184, 22);
-            this.txtNombre.TabIndex = 2;
-            // 
-            // cboTablas
-            // 
-            this.cboTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTablas.FormattingEnabled = true;
-            this.cboTablas.Location = new System.Drawing.Point(136, 78);
-            this.cboTablas.Name = "cboTablas";
-            this.cboTablas.Size = new System.Drawing.Size(184, 24);
-            this.cboTablas.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Columna:";
             // 
             // button1
             // 
@@ -126,6 +109,63 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cboTablas
+            // 
+            this.cboTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTablas.FormattingEnabled = true;
+            this.cboTablas.Location = new System.Drawing.Point(136, 78);
+            this.cboTablas.Name = "cboTablas";
+            this.cboTablas.Size = new System.Drawing.Size(184, 24);
+            this.cboTablas.TabIndex = 3;
+            this.cboTablas.SelectedIndexChanged += new System.EventHandler(this.cboTablas_SelectedIndexChanged);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(136, 28);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(184, 22);
+            this.txtNombre.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(66, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tabla:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre Index:";
+            // 
+            // tabCode
+            // 
+            this.tabCode.Controls.Add(this.btnApply);
+            this.tabCode.Controls.Add(this.sqlIndex);
+            this.tabCode.Location = new System.Drawing.Point(4, 25);
+            this.tabCode.Name = "tabCode";
+            this.tabCode.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCode.Size = new System.Drawing.Size(563, 366);
+            this.tabCode.TabIndex = 1;
+            this.tabCode.Text = "Code";
+            this.tabCode.UseVisualStyleBackColor = true;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Location = new System.Drawing.Point(464, 323);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 26);
+            this.btnApply.TabIndex = 1;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // sqlIndex
             // 
             this.sqlIndex.Location = new System.Drawing.Point(59, 39);
@@ -134,21 +174,42 @@
             this.sqlIndex.TabIndex = 0;
             this.sqlIndex.Text = "";
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Columna:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 215);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Indice Complejo?";
             // 
-            // txtcolumna
+            // checkComplejo
             // 
-            this.txtcolumna.Location = new System.Drawing.Point(136, 146);
-            this.txtcolumna.Name = "txtcolumna";
-            this.txtcolumna.Size = new System.Drawing.Size(184, 22);
-            this.txtcolumna.TabIndex = 6;
+            this.checkComplejo.AutoSize = true;
+            this.checkComplejo.Location = new System.Drawing.Point(136, 216);
+            this.checkComplejo.Name = "checkComplejo";
+            this.checkComplejo.Size = new System.Drawing.Size(18, 17);
+            this.checkComplejo.TabIndex = 8;
+            this.checkComplejo.UseVisualStyleBackColor = true;
+            this.checkComplejo.CheckedChanged += new System.EventHandler(this.checkComplejo_CheckedChanged);
+            // 
+            // cboColumnas2
+            // 
+            this.cboColumnas2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColumnas2.FormattingEnabled = true;
+            this.cboColumnas2.Location = new System.Drawing.Point(136, 270);
+            this.cboColumnas2.Name = "cboColumnas2";
+            this.cboColumnas2.Size = new System.Drawing.Size(184, 24);
+            this.cboColumnas2.TabIndex = 10;
+            // 
+            // lblColumna2
+            // 
+            this.lblColumna2.AutoSize = true;
+            this.lblColumna2.Location = new System.Drawing.Point(47, 270);
+            this.lblColumna2.Name = "lblColumna2";
+            this.lblColumna2.Size = new System.Drawing.Size(67, 17);
+            this.lblColumna2.TabIndex = 9;
+            this.lblColumna2.Text = "Columna:";
             // 
             // CreateIndex
             // 
@@ -178,7 +239,12 @@
         private System.Windows.Forms.TabPage tabCode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox sqlIndex;
-        private System.Windows.Forms.TextBox txtcolumna;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboColumnas;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.CheckBox checkComplejo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboColumnas2;
+        private System.Windows.Forms.Label lblColumna2;
     }
 }

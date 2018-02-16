@@ -27,6 +27,7 @@ namespace SqliteProyect1
             cboDataType.Text = "";
             checkNull.Checked = false;
             txtDefaultValue.Text = "";
+            chkIncremental.Checked = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace SqliteProyect1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            columnnas.Add(new Columna(txtNombreColumna.Text, checkPK.Checked, cboDataType.Text, checkNull.Checked, txtDefaultValue.Text));
+            columnnas.Add(new Columna(txtNombreColumna.Text, checkPK.Checked, cboDataType.Text, checkNull.Checked, txtDefaultValue.Text,  chkIncremental.Checked));
             clearColumn();
             MessageBox.Show("Lleva " + columnnas.Count + " columna(s) agregadas");
         }
@@ -62,6 +63,11 @@ namespace SqliteProyect1
                 MessageBox.Show("Table Created!");
                 SqlBox.Text = "";
             }
+        }
+
+        private void CrearTable_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

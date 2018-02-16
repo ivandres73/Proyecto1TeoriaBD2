@@ -25,7 +25,12 @@ namespace SqliteProyect1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ivan.selectQuery("CREATE VIEW " + txtVIewName.Text + " AS " + viewBox.Text);
+            if (ivan.selectQuery("CREATE VIEW " + txtViewName.Text + " AS " + viewBox.Text) != null)
+            {
+                MessageBox.Show("View creado");
+                viewBox.Text = "";
+                txtViewName.Text = "";
+            }
         }
     }
 }

@@ -13,14 +13,16 @@ namespace SqliteProyect1
         string dataType;
         bool nullable;
         string defaultValue;
+        bool incremental;
 
-        public Columna(string n, bool p, string dt, bool nu, string dv)
+        public Columna(string n, bool p, string dt, bool nu, string dv, bool inc)
         {
             name = n;
             pk = p;
             dataType = dt;
             nullable = nu;
             defaultValue = dv;
+            incremental = inc;
         }
 
         public String getColumnLine()
@@ -29,6 +31,7 @@ namespace SqliteProyect1
             columnline = name + " ";
             columnline += dataType + " ";
             columnline += pk ? "primary key " : "";
+            columnline += incremental ? "autoincrement " : "";
             columnline += nullable ? "not null " : "";
             columnline += (defaultValue.Equals("")) ? "" : "default " + defaultValue;
 

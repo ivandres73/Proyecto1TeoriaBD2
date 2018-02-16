@@ -29,14 +29,72 @@ namespace SqliteProyect1
             dt.Columns.Add("NAME", typeof(String));
             cboTablas.ValueMember = "NAME";
             cboTablas.DataSource = dt;
+            cboColumnas2.Visible = false;
+            lblColumna2.Visible = false;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            indexCode += txtNombre.Text + " ON ";
-            indexCode += cboTablas.Text + " (" + txtcolumna.Text + ")";
+            if (checkComplejo.Checked == false)
+            {
+                indexCode += txtNombre.Text + " ON ";
+                indexCode += cboTablas.Text + " (" + cboColumnas.Text + ")";
 
-            sqlIndex.Text = indexCode;
+                sqlIndex.Text = indexCode;
+                tabControl1.SelectedTab = tabCode;
+            }
+            else
+            {
+                indexCode += txtNombre.Text + " ON ";
+                indexCode += cboTablas.Text + " (" + cboColumnas.Text + "," + cboColumnas2.Text + ")";
+
+                sqlIndex.Text = indexCode;
+                tabControl1.SelectedTab = tabCode;
+            }
+        }
+
+        private void cboTablas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dt = ivan.selectQuery("PRAGMA table_info(" + cboTablas.Text + ")");
+            dt.Columns.Add("NAME", typeof(String));
+            cboColumnas.ValueMember = "NAME";
+            cboColumnas.DataSource = dt;
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            if (ivan.runCommand(sqlIndex.Text) == true)
+            {
+                MessageBox.Show("Indice creado en tabla: " + cboTablas.Text);
+                sqlIndex.Text = "";
+            }
+        }
+
+        private void checkComplejo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkComplejo.Checked == true)
+            {
+                cboColumnas2.Visible = true;
+                lblColumna2.Visible = true;
+
+                DataTable dt2 = new DataTable();
+                dt2 = ivan.selectQuery("PRAGMA table_info(" + cboTablas.Text + ")");
+                dt2.Columns.Add("NAME", typeof(String));
+                cboColumnas2.ValueMember = "NAME";
+                cboColumnas2.DataSource = dt2;
+                //cboColumnas2.Items.RemoveAt(cboColumnas.SelectedIndex);
+            }
+            else
+            {
+                cboColumnas2.Visible = false;
+                lblColumna2.Visible = false;
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -31,7 +31,7 @@
             this.viewBox = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtVIewName = new System.Windows.Forms.TextBox();
+            this.txtViewName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -62,12 +62,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = " Nombre del view:";
             // 
-            // txtVIewName
+            // txtViewName
             // 
-            this.txtVIewName.Location = new System.Drawing.Point(148, 53);
-            this.txtVIewName.Name = "txtVIewName";
-            this.txtVIewName.Size = new System.Drawing.Size(159, 22);
-            this.txtVIewName.TabIndex = 3;
+            this.txtViewName.Location = new System.Drawing.Point(148, 53);
+            this.txtViewName.Name = "txtViewName";
+            this.txtViewName.Size = new System.Drawing.Size(159, 22);
+            this.txtViewName.TabIndex = 3;
             // 
             // label2
             // 
@@ -84,7 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 389);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtVIewName);
+            this.Controls.Add(this.txtViewName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.viewBox);
@@ -101,7 +101,7 @@
         private System.Windows.Forms.RichTextBox viewBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtVIewName;
+        private System.Windows.Forms.TextBox txtViewName;
         private System.Windows.Forms.Label label2;
     }
 }

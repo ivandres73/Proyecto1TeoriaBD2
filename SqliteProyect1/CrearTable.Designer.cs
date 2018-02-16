@@ -46,9 +46,11 @@
             this.txtNombreTabla = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCode = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.SqlBox = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.chkIncremental = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.chechPK.SuspendLayout();
             this.tabCode.SuspendLayout();
@@ -61,11 +63,13 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(770, 381);
+            this.tabControl1.Size = new System.Drawing.Size(860, 381);
             this.tabControl1.TabIndex = 0;
             // 
             // chechPK
             // 
+            this.chechPK.Controls.Add(this.chkIncremental);
+            this.chechPK.Controls.Add(this.label6);
             this.chechPK.Controls.Add(this.button2);
             this.chechPK.Controls.Add(this.button1);
             this.chechPK.Controls.Add(this.txtDefaultValue);
@@ -83,14 +87,14 @@
             this.chechPK.Location = new System.Drawing.Point(4, 25);
             this.chechPK.Name = "chechPK";
             this.chechPK.Padding = new System.Windows.Forms.Padding(3);
-            this.chechPK.Size = new System.Drawing.Size(762, 352);
+            this.chechPK.Size = new System.Drawing.Size(852, 352);
             this.chechPK.TabIndex = 0;
             this.chechPK.Text = "Visual";
             this.chechPK.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(613, 144);
+            this.button2.Location = new System.Drawing.Point(728, 146);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 23);
             this.button2.TabIndex = 13;
@@ -100,7 +104,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(613, 23);
+            this.button1.Location = new System.Drawing.Point(728, 323);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 23);
             this.button1.TabIndex = 12;
@@ -110,7 +114,7 @@
             // 
             // txtDefaultValue
             // 
-            this.txtDefaultValue.Location = new System.Drawing.Point(440, 144);
+            this.txtDefaultValue.Location = new System.Drawing.Point(529, 146);
             this.txtDefaultValue.Name = "txtDefaultValue";
             this.txtDefaultValue.Size = new System.Drawing.Size(100, 22);
             this.txtDefaultValue.TabIndex = 11;
@@ -118,7 +122,7 @@
             // checkNull
             // 
             this.checkNull.AutoSize = true;
-            this.checkNull.Location = new System.Drawing.Point(365, 144);
+            this.checkNull.Location = new System.Drawing.Point(468, 144);
             this.checkNull.Name = "checkNull";
             this.checkNull.Size = new System.Drawing.Size(18, 17);
             this.checkNull.TabIndex = 10;
@@ -129,7 +133,7 @@
             this.cboDataType.FormattingEnabled = true;
             this.cboDataType.Items.AddRange(new object[] {
             "varchar",
-            "int",
+            "integer",
             "boolean"});
             this.cboDataType.Location = new System.Drawing.Point(201, 144);
             this.cboDataType.Name = "cboDataType";
@@ -156,7 +160,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(437, 110);
+            this.label5.Location = new System.Drawing.Point(526, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 17);
             this.label5.TabIndex = 6;
@@ -165,7 +169,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(348, 110);
+            this.label4.Location = new System.Drawing.Point(451, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 5;
@@ -226,6 +230,16 @@
             this.tabCode.Text = "Code";
             this.tabCode.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(642, 312);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 27);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Apply";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // SqlBox
             // 
             this.SqlBox.Location = new System.Drawing.Point(37, 83);
@@ -240,24 +254,33 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // button3
+            // label6
             // 
-            this.button3.Location = new System.Drawing.Point(642, 312);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Apply";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(347, 110);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Incremental";
+            // 
+            // chkIncremental
+            // 
+            this.chkIncremental.AutoSize = true;
+            this.chkIncremental.Location = new System.Drawing.Point(380, 148);
+            this.chkIncremental.Name = "chkIncremental";
+            this.chkIncremental.Size = new System.Drawing.Size(18, 17);
+            this.chkIncremental.TabIndex = 15;
+            this.chkIncremental.UseVisualStyleBackColor = true;
             // 
             // CrearTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 443);
+            this.ClientSize = new System.Drawing.Size(958, 443);
             this.Controls.Add(this.tabControl1);
             this.Name = "CrearTable";
             this.Text = "CrearTable";
+            this.Load += new System.EventHandler(this.CrearTable_Load);
             this.tabControl1.ResumeLayout(false);
             this.chechPK.ResumeLayout(false);
             this.chechPK.PerformLayout();
@@ -288,5 +311,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox chkIncremental;
+        private System.Windows.Forms.Label label6;
     }
 }
