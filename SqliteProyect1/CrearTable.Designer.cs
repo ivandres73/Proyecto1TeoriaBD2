@@ -51,6 +51,14 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.chkIncremental = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkForeign = new System.Windows.Forms.CheckBox();
+            this.lblTableForeign = new System.Windows.Forms.Label();
+            this.lblColumnForeign = new System.Windows.Forms.Label();
+            this.cboTableForeign = new System.Windows.Forms.ComboBox();
+            this.cboColumnForeign = new System.Windows.Forms.ComboBox();
+            this.cbo = new System.Windows.Forms.ComboBox();
+            this.lblcol = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.chechPK.SuspendLayout();
             this.tabCode.SuspendLayout();
@@ -68,6 +76,14 @@
             // 
             // chechPK
             // 
+            this.chechPK.Controls.Add(this.cbo);
+            this.chechPK.Controls.Add(this.lblcol);
+            this.chechPK.Controls.Add(this.cboColumnForeign);
+            this.chechPK.Controls.Add(this.cboTableForeign);
+            this.chechPK.Controls.Add(this.lblColumnForeign);
+            this.chechPK.Controls.Add(this.lblTableForeign);
+            this.chechPK.Controls.Add(this.checkForeign);
+            this.chechPK.Controls.Add(this.label7);
             this.chechPK.Controls.Add(this.chkIncremental);
             this.chechPK.Controls.Add(this.label6);
             this.chechPK.Controls.Add(this.button2);
@@ -104,9 +120,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(728, 323);
+            this.button1.Location = new System.Drawing.Point(728, 320);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.Size = new System.Drawing.Size(118, 26);
             this.button1.TabIndex = 12;
             this.button1.Text = "Generate";
             this.button1.UseVisualStyleBackColor = true;
@@ -272,6 +288,80 @@
             this.chkIncremental.TabIndex = 15;
             this.chkIncremental.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 224);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 17);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Foreign Key?";
+            // 
+            // checkForeign
+            // 
+            this.checkForeign.AutoSize = true;
+            this.checkForeign.Location = new System.Drawing.Point(129, 224);
+            this.checkForeign.Name = "checkForeign";
+            this.checkForeign.Size = new System.Drawing.Size(18, 17);
+            this.checkForeign.TabIndex = 17;
+            this.checkForeign.UseVisualStyleBackColor = true;
+            this.checkForeign.CheckedChanged += new System.EventHandler(this.checkForeign_CheckedChanged);
+            // 
+            // lblTableForeign
+            // 
+            this.lblTableForeign.AutoSize = true;
+            this.lblTableForeign.Location = new System.Drawing.Point(360, 253);
+            this.lblTableForeign.Name = "lblTableForeign";
+            this.lblTableForeign.Size = new System.Drawing.Size(96, 17);
+            this.lblTableForeign.TabIndex = 18;
+            this.lblTableForeign.Text = "Foreign Table";
+            // 
+            // lblColumnForeign
+            // 
+            this.lblColumnForeign.AutoSize = true;
+            this.lblColumnForeign.Location = new System.Drawing.Point(516, 253);
+            this.lblColumnForeign.Name = "lblColumnForeign";
+            this.lblColumnForeign.Size = new System.Drawing.Size(107, 17);
+            this.lblColumnForeign.TabIndex = 19;
+            this.lblColumnForeign.Text = "Foreign Column";
+            // 
+            // cboTableForeign
+            // 
+            this.cboTableForeign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTableForeign.FormattingEnabled = true;
+            this.cboTableForeign.Location = new System.Drawing.Point(347, 292);
+            this.cboTableForeign.Name = "cboTableForeign";
+            this.cboTableForeign.Size = new System.Drawing.Size(121, 24);
+            this.cboTableForeign.TabIndex = 20;
+            this.cboTableForeign.SelectedIndexChanged += new System.EventHandler(this.cboTableForeign_SelectedIndexChanged);
+            // 
+            // cboColumnForeign
+            // 
+            this.cboColumnForeign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColumnForeign.FormattingEnabled = true;
+            this.cboColumnForeign.Location = new System.Drawing.Point(507, 292);
+            this.cboColumnForeign.Name = "cboColumnForeign";
+            this.cboColumnForeign.Size = new System.Drawing.Size(121, 24);
+            this.cboColumnForeign.TabIndex = 21;
+            // 
+            // cbo
+            // 
+            this.cbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo.FormattingEnabled = true;
+            this.cbo.Location = new System.Drawing.Point(150, 292);
+            this.cbo.Name = "cbo";
+            this.cbo.Size = new System.Drawing.Size(121, 24);
+            this.cbo.TabIndex = 23;
+            // 
+            // lblcol
+            // 
+            this.lblcol.AutoSize = true;
+            this.lblcol.Location = new System.Drawing.Point(182, 253);
+            this.lblcol.Name = "lblcol";
+            this.lblcol.Size = new System.Drawing.Size(55, 17);
+            this.lblcol.TabIndex = 22;
+            this.lblcol.Text = "Column";
+            // 
             // CrearTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,5 +403,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox chkIncremental;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboColumnForeign;
+        private System.Windows.Forms.ComboBox cboTableForeign;
+        private System.Windows.Forms.Label lblColumnForeign;
+        private System.Windows.Forms.Label lblTableForeign;
+        private System.Windows.Forms.CheckBox checkForeign;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbo;
+        private System.Windows.Forms.Label lblcol;
     }
 }

@@ -8,7 +8,7 @@ namespace SqliteProyect1
 {
     class Columna
     {
-        string name;
+        public string name;
         bool pk;
         string dataType;
         bool nullable;

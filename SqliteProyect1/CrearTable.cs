@@ -40,9 +40,15 @@ namespace SqliteProyect1
                 for (int i = 0; i < columnnas.Count(); i++)
                 {
                     sql += columnnas[i].getColumnLine();
-                    sql += (i == columnnas.Count() - 1) ? ")" : ",";
+                    sql += (i == columnnas.Count() - 1) ? "" : ",";
                 }
+                sql += (checkForeign.Checked) ? "," : "";
             }
+            if (checkForeign.Checked == true)
+            {
+                sql += "FOREIGN KEY(" + cbo.Text+ ") REFERENCES " + cboTableForeign.Text + "(" + cboColumnForeign.Text + ")";
+            }
+            sql += ")";
             SqlBox.Text = sql;
             tabControl1.SelectedTab = tabCode;
             columnnas.Clear();
@@ -67,7 +73,55 @@ namespace SqliteProyect1
 
         private void CrearTable_Load(object sender, EventArgs e)
         {
+            lblColumnForeign.Visible = false;
+            lblTableForeign.Visible = false;
+            cboColumnForeign.Visible = false;
+            cboTableForeign.Visible = false;
+            cbo.Visible = false;
+            lblcol.Visible = false;
+        }
 
+        private void checkForeign_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkForeign.Checked == true)
+            {
+                lblColumnForeign.Visible = true;
+                lblTableForeign.Visible = true;
+                cboColumnForeign.Visible = true;
+                cboTableForeign.Visible = true;
+                cbo.Visible = true;
+                lblcol.Visible = true;
+
+                cbo.Items.Clear();
+                for (int i=0; i < columnnas.Count; i++)
+                {
+                    cbo.Items.Add(columnnas[i].name);
+                }
+
+                DataTable dt1 = new DataTable();
+                dt1 = ivan.selectQuery("SELECT * FROM sqlite_master WHERE type = 'table'");
+                dt1.Columns.Add("NAME", typeof(String));
+                cboTableForeign.ValueMember = "NAME";
+                cboTableForeign.DataSource = dt1;
+            }
+            else
+            {
+                lblColumnForeign.Visible = false;
+                lblTableForeign.Visible = false;
+                cboColumnForeign.Visible = false;
+                cboTableForeign.Visible = false;
+                cbo.Visible = false;
+                lblcol.Visible = false;
+            }
+        }
+
+        private void cboTableForeign_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt2 = new DataTable();
+            dt2 = ivan.selectQuery("PRAGMA table_info(" + cboTableForeign.Text + ")");
+            dt2.Columns.Add("NAME", typeof(String));
+            cboColumnForeign.ValueMember = "NAME";
+            cboColumnForeign.DataSource = dt2;
         }
     }
 }
