@@ -45,3 +45,28 @@ C:\Users\ivand\Documents\VisualStudio Proyects\SqliteProyect1\Proyecto1TeoriaBD2
 C:\Users\ivand\Documents\VisualStudio Proyects\SqliteProyect1\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.exe
 C:\Users\ivand\Documents\VisualStudio Proyects\SqliteProyect1\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.pdb
 C:\Users\ivand\Documents\VisualStudio Proyects\SqliteProyect1\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.EditTable.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\SqliteProyect1.exe.config
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\SqliteProyect1.exe
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\SqliteProyect1.pdb
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\EntityFramework.dll
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\System.Data.SQLite.dll
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\EntityFramework.xml
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\System.Data.SQLite.xml
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.csprojAssemblyReference.cache
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.CrearTable.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.CreateIndex.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.CreateTrigger.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.CreateView.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.EditTable.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.Form1.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.Properties.Resources.resources
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.csproj.GenerateResource.cache
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.csproj.CoreCompileInputs.cache
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.csproj.CopyComplete
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.exe
+C:\Users\ivand\Documents\Proyecto1TeoriaBD2\SqliteProyect1\obj\Debug\SqliteProyect1.pdb
